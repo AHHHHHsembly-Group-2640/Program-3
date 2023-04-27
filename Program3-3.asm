@@ -8,14 +8,14 @@
 .data
 fileName: .asciiz "practiceFile.txt"
 outBuffer: .space 200		#200 bytes
-inBuffer: .asciiz "\nThing I have enjoyed most about the class so far is the doable workload and reasonable tests."
+inBuffer: .asciiz "\nThing I have enjoyed most about the class so far is the doable workload and reasonable tests. -T I honestly just like coding -R"
 
 .text
 main:
 	#open a file using flag value 9
 	li $v0, 13		#open file
 	la $a0, fileName	#file name
-	li $a1, 9		#0 is flag to read from file, 9 is different flag to... append file?
+	li $a1, 9		#0 is flag to read from file, 9 is different flag to append file?
 	li $a2, 0		#ignored
 	syscall
 	move $s0, $v0		#store file descriptor in $s0

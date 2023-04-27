@@ -3,6 +3,9 @@
 # April 26, 2023
 # Objective: Program 3 - Accessing Memory and File Handling - Task 2
 # Write an Assembly program that takes in a programmer-defined filename
+# - Open file
+# - Read file and print to user
+# - Close file
 
 .data 
 fileName: .asciiz "practiceFile.txt"
