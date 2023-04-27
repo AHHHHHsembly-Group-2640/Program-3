@@ -1,7 +1,7 @@
 # CS2640-01
 # Group: AHHHH (Khushi Gupta, Remi Ong, Tam Dinh, Viet Nguyen)
 # April 26, 2023
-# Objective: Program 3 - Accessing Memory and File Handling Task 1
+# Objective: Program 3 - Accessing Memory and File Handling - Task 1
 # Write an Assembly program that will return a letter grade for each element in an array
 # (e.g. test scores in an array of scores)
 # Include:
@@ -27,15 +27,17 @@
 .data 
 gradePrint: .asciiz "\nThe grade for "
 is: .asciiz " is: "
-extraCre: .asciiz " with Extra Credit"
-exitPrint: .asciiz "\nThe program will now exit."
+
 array: .word 32, 56, 78, 66, 88, 90, 93, 100, 101, 82
+
 letterA: .asciiz "A"
 letterB: .asciiz "B"
 letterC: .asciiz "C"
 letterD: .asciiz "D"
 letterF: .asciiz "F"
 bonus: .asciiz "A with Extra Credit"
+
+exitPrint: .asciiz "\nThe program will now exit."
 
 .text 
 main: 
@@ -60,7 +62,7 @@ loop:
 	#A with bonus if greater than 100
 	bgt $t0, 100, gradeBonus
 	
-	#A if greater than or equal to 90
+	#Else A if greater than or equal to 90
     	bge $t0, 90, gradeA
     	
     	#Else B if score is greater or euqal to 80 
@@ -121,6 +123,7 @@ gradeF:
 	syscall
 	j continue
 
+#exit program
 exit:
 	li $v0, 4
 	la $a0, exitPrint
