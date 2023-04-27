@@ -88,6 +88,7 @@ gradeBonus:
 	li $v0, 4
 	la $a0, bonus
 	syscall 
+	j continue
 
 #label to print the Grade character as defined
 gradeA:
