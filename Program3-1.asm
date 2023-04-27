@@ -27,16 +27,8 @@
 .data 
 gradePrint: .asciiz "\nThe grade for "
 is: .asciiz " is: "
-
 array: .word 32, 56, 78, 66, 88, 90, 93, 100, 101, 82
-
-letterA: .asciiz "A"
-letterB: .asciiz "B"
-letterC: .asciiz "C"
-letterD: .asciiz "D"
-letterF: .asciiz "F"
 bonus: .asciiz "A with Extra Credit"
-
 exitPrint: .asciiz "\nThe program will now exit."
 
 .text 
@@ -91,35 +83,38 @@ continue:
 	theGrade
 	j loop #repeat/jump the loop
 
+#label to print bonus grade
 gradeBonus:
 	li $v0, 4
 	la $a0, bonus
 	syscall 
+
+#label to print the Grade character as defined
 gradeA:
-	li $v0, 4
-	la $a0, letterA
+	li $v0, 11
+	li $a0, 'A'
 	syscall
 	j continue
 
 gradeB:
-	li $v0, 4
-	la $a0, letterB
+	li $v0, 11
+	li $a0, 'B'
 	syscall
 	j continue
 
 gradeC:
-	li $v0, 4
-	la $a0, letterC
+	li $v0, 11
+	li $a0, 'C'
 	syscall
 	j continue
 gradeD:
-	li $v0, 4
-	la $a0, letterD
+	li $v0, 11
+	li $a0, 'D'
 	syscall
 	j continue
-gradeF:
-	li $v0, 4
-	la $a0, letterF
+gradeF:	
+	li $v0, 11
+	li $a0, 'F'
 	syscall
 	j continue
 
